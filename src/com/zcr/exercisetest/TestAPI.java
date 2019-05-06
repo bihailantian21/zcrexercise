@@ -1,74 +1,16 @@
-import com.zcr.exercisefundation.Car;
-import com.zcr.exercisefundation.ElectricCar;
+package com.zcr.exercisetest;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Random;
-import java.util.Scanner;
 
 /**
  * @author zcr
- * @date 2019/5/6-11:11
+ * @date 2019/5/6-21:29
  */
-public class TestFundation {
-
+public class TestAPI {
     public static void  main(String args[]){
-       /*
-        第一阶段1
-        Scanner sc = new Scanner(System.in);
-        int x = sc.nextInt();
-        System.out.println(x);
-
-        Random r = new Random();
-        int number = r.nextInt();
-        System.out.println(number);
-
-        int[] arr = new int[5];
-        arr[0]=1;
-        arr[2]=3;
-        System.out.println(arr[4]);*/
-
-        /*
-        第一阶段2
-
-        Car car1 = new Car();
-        System.out.println(car1);
-        Car car2 = new Car("Audi","A8",2018,0);
-        System.out.println(car2);
-
-        ElectricCar ecar1 = new ElectricCar(23.23);
-        System.out.println(ecar1);
-        ElectricCar ecar2 = new ElectricCar("Tesla","model X",2019,10,230.89);
-        System.out.println(ecar2);
-        ecar2.Dri();
-
-        Car car3 = new ElectricCar(2333);
-        System.out.println(((ElectricCar) car3).getBattery_size());
-        car3.propertity();
-        if (car3 instanceof Car) {
-            System.out.println("我是汽车");
-
-        }
-        if (car3 instanceof ElectricCar) {
-            System.out.println("我是电动汽车");
-
-        }
-
-        System.out.println(Math.PI);
-
-        try {
-            int a = 10/0;
-        } catch (Exception e) {
-            e.printStackTrace();
-            *//*System.out.println(e.getMessage());
-            System.out.println(e.toString());*//*
-        } finally {
-            System.out.println(Math.PI);
-        }*/
-
-        /*
-        第一阶段3
+        //第一阶段3
         byte[] by1 = {1,3,1,4,2,12,126};
         String s1 = new String(by1,2,2);
         System.out.println(s1);
@@ -101,16 +43,16 @@ public class TestFundation {
 
         byte[] by2 = s4.getBytes();
         for (byte b : by2
-             ) {
+        ) {
             System.out.println(b);
 
         }
 
         char[] cs3 = s4.toCharArray();
         for (char c : cs3
-             ) {
+        ) {
             System.out.println(c);
-            
+
         }
 
         String s6 = String.valueOf(cs2);
@@ -160,7 +102,7 @@ public class TestFundation {
 
         System.out.println(d2.toString());
 
-        SimpleDateFormat sd1 = new SimpleDateFormat("YY-MM-DD SS-mm-ss");
+        SimpleDateFormat sd1 = new SimpleDateFormat("yy-MM-dd ss-mm");
         System.out.println(sd1.format(d1));
 
         //System.out.println(sd1.parse("2019-12-01 982-23-27"));
@@ -174,27 +116,9 @@ public class TestFundation {
         System.out.println(Math.max(12.34,45.45));
         System.out.println(Math.min(12,23));
         System.out.println(Math.round(34.23));
-        System.out.println(Math.pow(2,3));*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        System.out.println(Math.pow(2,3));
 
 
 
     }
-
 }
