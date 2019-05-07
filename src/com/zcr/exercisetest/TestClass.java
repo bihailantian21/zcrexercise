@@ -2,6 +2,7 @@ package com.zcr.exercisetest;
 
 import com.zcr.exercisefundation.Car;
 import com.zcr.exercisefundation.ElectricCar;
+import com.zcr.exercisefundation.Engine;
 
 /**
  * @author zcr
@@ -16,8 +17,17 @@ public class TestClass {
         Car car2 = new Car("Audi","A8",2018,0);
         System.out.println(car2);
 
+        Engine e1 = new Engine();
+        e1.setBrand("迈斯特");
+
+        car2.setEngine(e1);
+        car2.zuzhuang();
+
+
         ElectricCar ecar1 = new ElectricCar(23.23);
         System.out.println(ecar1);
+        System.out.println(ecar1.getOdometer_reading());//通过super()传过来的
+
         ElectricCar ecar2 = new ElectricCar("Tesla","model X",2019,10,230.89);
         System.out.println(ecar2);
         ecar2.Dri();
@@ -45,5 +55,12 @@ public class TestClass {
         } finally {
             System.out.println(Math.PI);
         }
+
+
+        Car car11 = new Car();
+        Car car22 = new Car();
+        System.out.println(car11==car22);
+        System.out.println(car11.equals(car22));
+
     }
 }

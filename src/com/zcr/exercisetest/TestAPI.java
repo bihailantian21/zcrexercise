@@ -1,6 +1,7 @@
 package com.zcr.exercisetest;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -41,25 +42,28 @@ public class TestAPI {
 //        System.out.println(s4.matches(""));
 
 
-        byte[] by2 = s4.getBytes();
+        byte[] by2 = s4.getBytes();//字符串转化为字节数组
         for (byte b : by2
         ) {
             System.out.println(b);
 
         }
 
-        char[] cs3 = s4.toCharArray();
+        char[] cs3 = s4.toCharArray();//字符串转化为字符数组
         for (char c : cs3
         ) {
             System.out.println(c);
 
         }
 
-        String s6 = String.valueOf(cs2);
+        String s6 = String.valueOf(cs2);//字符数组转化为字符串
         System.out.println(s6);
 
-        String s7 = String.valueOf(1233);
+        String s7 = String.valueOf(1233);//整数转化为字符串
         System.out.println(s7);
+
+        int[] a = {1,2,3};//数组显示
+        System.out.println(Arrays.toString(a));
 
         System.out.println(s5.toLowerCase());
         System.out.println(s4.toUpperCase());
@@ -93,6 +97,12 @@ public class TestAPI {
         System.out.println(sb4);
         String sb5 = sb2.substring(5,6);
         System.out.println(sb5);
+
+        //数组
+        int[] a1 = {2,4,14,54,523,12};
+        System.out.println(Arrays.toString(a1));
+        Arrays.sort(a1);
+        System.out.println(Arrays.toString(a1));
 
 
         Date d1 = new Date();

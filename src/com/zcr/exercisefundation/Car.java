@@ -9,11 +9,15 @@ public class Car{
     private String model;
     private int year;
     private double odometer_reading;
+    private Engine engine;
+
+
 
     public Car() {
     }
 
     public Car(String make, String model, int year, double odometer_reading) {
+        this();
         this.make = make;
         this.model = model;
         this.year = year;
@@ -64,5 +68,21 @@ public class Car{
 
     public void propertity(){
         System.out.println("我有四个轮胎");
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public void zuzhuang(){
+        System.out.println("我的引擎品牌是"+engine.getBrand());
+    }
+
+    private void fuleisiyou(){
+        System.out.println("fuleisiyou");
     }
 }
