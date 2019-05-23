@@ -24,5 +24,8 @@ public class TestAlgorithms {
         Arrays.sort(values3);
         System.out.println(BinarySearch.binarySearch(values3,searchWord));
 
+
+        System.out.println("我在mac上进行了代码的调试");
+
     }
 }
