@@ -9,7 +9,7 @@ public class Car{
     private String model;
     private int year;
     private double odometer_reading;
-    private Engine engine;
+    private Engine engine;////类和类之间是可以互相引用的、嵌套的
 
 
 
@@ -85,4 +85,16 @@ public class Car{
     private void fuleisiyou(){
         System.out.println("fuleisiyou");
     }
+}
+
+//每一个源文件必须有且只有一个public class，并且类名和文件名保持一致！
+// 一个Java文件可以同时定义多个class
+class Tyre{
+
+}
+class Enginee{
+
+}
+class Seat{
+
 }

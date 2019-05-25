@@ -87,12 +87,12 @@ public class TestCollections {
         System.out.println(s4);
         Set<Student> s5 = new TreeSet<Student>();
         //创建元素对象
-        Student ss1=new Student("zhangsan",20);
-        Student ss2=new Student("anna",22);
-        Student ss3=new Student("bobo",24);
-        Student ss4=new Student("chenliu",26);
-        Student ss5=new Student("zhangsan",22);
-        Student ss6=new Student("qianqi",24);
+        Student ss1=new Student(1,"z");
+        Student ss2=new Student(2,"w");
+        Student ss3=new Student(3,"l");
+        Student ss4=new Student(4,"ww");
+        Student ss5=new Student(5,"we");
+        Student ss6=new Student(6,"x");
         //将元素对象添加到集合对象中
         s5.add(ss1);
         s5.add(ss2);
