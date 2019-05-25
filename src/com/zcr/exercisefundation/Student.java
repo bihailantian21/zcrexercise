@@ -105,7 +105,8 @@ public class Student implements Comparable<Student>{
             this.a = a;
             this.b = b;
         }
-    2.使用this关键字调用重载的构造方法，避免相同的初始化代码。但只能在构造方法中用，并且必须位于构造方法的第一句。
+    2.让类中的一个方法，访问该类的另一个方法或属性。
+    3.使用this关键字调用重载的构造方法，避免相同的初始化代码。但只能在构造方法中用，并且必须位于构造方法的第一句。
         TestThis(int a, int b, int c) {
             this(a, b); // 调用带参的构造方法，并且必须位于第一行！因为我们之前已经写过了，所以我们直接去调用，就是通过this调用
             this.c = c;
@@ -180,7 +181,7 @@ public class Student implements Comparable<Student>{
     public int compareTo(Student s) {
         //return -1; //-1表示放在红黑树的左边,即逆序输出
         //return 1;  //1表示放在红黑树的右边，即顺序输出
-        //return o;  //表示元素相同，仅存放第一个元素
+        //return 0;  //表示元素相同，仅存放第一个元素
 
         //主要条件 姓名的长度,如果姓名长度小的就放在左子树，否则放在右子树
         int num=this.name.length()-s.name.length();//姓名短的在前，长的在后

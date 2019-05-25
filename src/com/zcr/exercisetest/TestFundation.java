@@ -440,10 +440,231 @@ public class TestFundation {
         System.out.println();
 
         //数组
-        int[] arr = new int[5];
-        arr[0]=1;
-        arr[2]=3;
-        System.out.println("根据下标值取得数组中的数据" + arr[4]);
+        /*数组是相同类型数据的有序集合。（有序指的就是它的下标）
+        数组描述的是相同类型的若干个数据，按照一定的先后次序排列组合而成。其中，
+        每一个数据称作一个元素，每个元素可以通过一个索引(下标)来访问它们。
+
+        数组的三个基本特点：
+        1.长度是确定的。数组一旦被创建，它的大小就是不可以改变的。
+        2.其元素必须是相同类型，不允许出现混合类型。
+        3.数组类型可以是任何数据类型，包括基本类型和引用类型。
+
+        数组变量属引用类型，数组也可以看成是对象，数组中的每个元素相当于该对象的成员变量。
+        数组本身就是对象，Java中对象是在堆中的，因此数组无论保存原始类型还是其他对象类型，数组对象本身是在堆中存储的。
+
+        数组的声明方式有两种(以一维数组为例)
+            type[]   arr_name; //（推荐使用这种方式）
+            type    arr_name[];
+
+        1.声明的时候并没有实例化任何对象，只有在实例化数组对象时，JVM才分配空间，这时才与长度有关。
+        2.声明一个数组的时候并没有数组真正被创建。
+        3.构造一个数组，必须指定长度。
+        */
+        int[] arr = null; // 声明数组；栈里面有了一个s，但是堆里面什么都没有
+        arr = new int[10]; // 给数组分配空间；在堆里分配空间，创造出一个数组对象，每个元素可以看做是对象的成员变量，所以执行完这一步是，里面的int元素都是0
+        for (i = 0; i < 10; i++) {
+            arr[i] = 2 * i + 1;//给数组元素赋值；通过索引下标来赋值
+            System.out.println("数组中的数据是："+arr[i]);
+        }
+        System.out.println(arr);
+
+        int[] arr01 = new int[5];
+        arr01[0]=1;
+        arr01[2]=3;
+        System.out.println("根据下标值取得数组中的数据" + arr01[4]);
+        System.out.println("数组是："+arr01);
+
+        //创建引用类型一维数组
+        /*声明完stus对象数组后，会在堆内存中有一个列表。然后每个列表中都创建一个新的对象，指向新对象的地址。
+        而不是把每个对象直接放到里面。
+        存的是引用类型，也就是我们新对象的地址，并不是把对象直接放到里面，*/
+        Student[] stus;  //声明引用类型数组；
+        stus = new Student[10];  //给引用类型数组分配空间；
+        Student m1 = new Student(1,"1211");
+        Student m2 = new Student(2,"1222222");
+        stus[0]=m1;//给引用类型数组元素赋值；
+        stus[1]=m2;//给引用类型数组元素赋值；
+
+        //数组初始化
+       /* 数组的初始化方式总共有三种：静态初始化、动态初始化、默认初始化。下面针对这三种方式分别讲解。
+        1.静态初始化
+        除了用new关键字来产生数组以外，还可以直接在定义数组的同时就为数组元素分配空间并赋值。
+        2.动态初始化
+        数组定义与为数组元素分配空间并赋值的操作分开进行。
+        3.数组的默认初始化
+        数组是引用类型，它的元素相当于类的实例变量，因此数组一经分配空间，其中的每个元素也被按照实例变量同样的方式被隐式初始化。*/
+        //静态初始化
+        int[] arr02 = { 1, 2, 3 };// 静态初始化基本类型数组；
+        Student[] mans = { new Student(1, "122122"), new Student(2, "12222") };// 静态初始化引用类型数组；
+        //动态初始化
+        int[] arr1 = new int[2];//动态初始化数组，先分配空间；
+        arr1[0]=1;//给数组元素赋值；
+        arr1[1]=2;//给数组元素赋值；
+        //数组的默认初始化
+        int a2[] = new int[2]; // 默认值：0,0
+        boolean[] brr = new boolean[2]; // 默认值：false,false
+        String[] srr = new String[2]; // 默认值：null, null
+
+        //数组的遍历
+        int[] arro4 = new int[4];
+        //初始化数组元素的值
+        for(i=0;i<arro4.length;i++){
+            arro4[i] = 100*i;
+        }
+        //读取元素的值
+        for(i=0;i<arro4.length;i++){
+            System.out.println(arro4[i]);
+        }
+        //增强for循环for-each是JDK1.5新增加的功能，专门用于读取数组或集合中所有的元素，即对数组进行遍历。
+        String[] ss = { "aa", "bbb", "ccc", "ddd" };//静态初始化
+        //foreach循环用于读取数组元素的值。因为没有下标，不能修改元素的值
+        for (String temp : ss) {
+            System.out.println(temp);
+        }
+
+        //数组的拷贝
+        /*System类里也包含了一个
+        static void arraycopy(object src，int srcpos，object dest， int destpos，int length)
+        方法，该方法可以将src数组里的元素值赋给dest数组的元素，其中srcpos指定从src数组的第几个元素开始赋值，
+        length参数指定将src数组的多少个元素赋给dest数组的元素。*/
+        String[] srr1 = {"阿里","京东","搜狐","网易","腾讯"};
+        String[] sBak = new String[6];
+        System.arraycopy(srr1,0,sBak,0,srr1.length);
+        for (i = 0; i < sBak.length; i++) {
+            System.out.print(sBak[i]+ "\t");
+        }
+        System.out.println();
+        String[] srr2 = {"aa","bb","cc","dd","ee"};
+        String[] srr3 = new String[10];
+        System.arraycopy(srr2,2,srr3,6,3);
+        for (i = 0; i < srr3.length; i++) {
+            System.out.println(i+"--"+srr3[i]);//null null null null null cc dd ee null
+        }
+        //数组的拷贝——插入和删除元素的本质
+        //测试从数组中删除某个元素
+        System.arraycopy(srr2,3,srr2,3-1,srr1.length-3);
+        for (i = 0;i<srr2.length;i++){
+            System.out.println(i+"--"+srr2[i]);//aa bb dd ee ee
+        }
+        //删除数组中指定索引位置的元素，并将原数组返回。如果写成一个remove方法，那么这里的index就是2
+        System.arraycopy(srr1,2+1,srr1,2,srr1.length-2-1);
+        srr1[srr1.length-1] = null;
+        for (i = 0;i<srr1.length;i++){
+            System.out.println(i+"--"+srr1[i]);//阿里 京东 网易 腾讯 null
+        }
+        //数组扩容
+        String[] srr05 = {"aa","bb","cc"};
+        String[] srr06 = new String[srr05.length+10];
+        System.arraycopy(srr05,0,srr06,0,srr05.length);//将srr05中的所有元素都拷贝到了srr06
+        for (i = 0;i<srr06.length;i++){
+            System.out.println(i+"--"+srr06[i]);//达到了扩容的效果
+        }
+
+        //java.util.Arrays类
+        /*JDK提供的java.util.Arrays类，包含了常用的数组操作，方便我们日常开发。
+        Arrays类包含了：排序、查找、填充、打印内容等常见的操作。*/
+        //打印数组
+        int[] arr07 = { 1, 2,1,3,5 };
+        System.out.println(arr07); // 打1`印数组引用的值；
+        //此处的Arrays.toString()方法是Arrays类的静态方法，不是前面讲的Object的toString()方法。
+        System.out.println(Arrays.toString(arr07)); // 打印数组元素的值；
+        //排序
+        //对基本类型和字符串有排序功能
+        int[] arr08 = {1,2,323,23,543,12,59};
+        System.out.println(Arrays.toString(arr08));
+        Arrays.sort(arr08);
+        System.out.println(Arrays.toString(arr08));
+        //对于我们自己定义的类要排序的话，要实现Comparable 接口，然后在里面重写compareTo方法
+        Man[] msMans = { new Man(3, "a"), new Man(60, "b"), new Man(2, "c") };
+        Arrays.sort(msMans);
+        System.out.println(Arrays.toString(msMans));
+
+        //二分法查找
+        int[] arr09 = {1,2,323,23,543,12,59};
+        System.out.println(Arrays.toString(arr09));
+        Arrays.sort(arr09);   //使用二分法查找，必须先对数组进行排序;
+        System.out.println(Arrays.toString(arr09));
+        //返回排序后新的索引位置,若未找到返回负数。
+        System.out.println("该元素的索引："+Arrays.binarySearch(arr09, 12));
+
+        //数组填充
+        int[] arr10= {1,2,323,23,543,12,59};
+        System.out.println(Arrays.toString(arr10));
+        Arrays.fill(arr10, 2, 4, 100);  //将2到4索引的元素替换为100;
+        System.out.println(Arrays.toString(arr10));
+
+        //多维数组
+        int[][] arr11 = new int[3][];
+        arr11[0] = new int[]{20,30};
+        arr11[1] = new int[]{10,15,80};
+        arr11[2] = new int[]{50,60};
+        System.out.println(arr11[1][2]);
+
+        //二维数组的声明
+        // Java中多维数组的声明和初始化应按从低维到高维的顺序进行
+        int[][] arr12 = new int[3][];
+        arr12[0] = new int[2];
+        arr12[1] = new int[4];
+        arr12[2] = new int[3];
+        // int a1[][]=new int[][4];//非法
+        arr12[0][0] = 5;
+        System.out.println(arr12[0][0]);
+
+        //二维数组的静态初始化
+        int[][] arr13 = { { 1, 2, 3 }, { 3, 4 }, { 3, 5, 6, 7 } };
+        System.out.println(arr13[2][3]);
+
+        //二维数组的动态初始化
+        int[][] arr14 = new int[3][];
+        // arr14[0] = {1,2,5}; //错误，没有声明类型就初始化
+        arr14[0] = new int[] { 1, 2 };
+        arr14[1] = new int[] { 2, 2 };
+        arr14[2] = new int[] { 2, 2, 3, 4 };
+        System.out.println(arr14[2][3]);
+        System.out.println(Arrays.toString(arr14[0]));
+        System.out.println(Arrays.toString(arr14[1]));
+        System.out.println(Arrays.toString(arr14[2]));
+        //获取数组长度
+        //获取的二维数组第一维数组的长度。
+        System.out.println(arr14.length);
+        //获取第二维第一个数组长度。
+        System.out.println(arr14[0].length);
+
+        //二维数组保存表格数据
+        Object[] arr15 = {1001,"高淇",18,"讲师","2006-2-14"};
+        Object[] arr16 = {1002,"高小七",19,"助教","2007-10-10"};
+        Object[] arr17 = {1003,"高小琴",20,"班主任","2008-5-5"};
+        Object[][]  emps = new Object[3][];
+        emps[0] = arr15;
+        emps[1] = arr16;
+        emps[2] = arr17;
+        System.out.println(Arrays.toString(emps[0]));
+        System.out.println(Arrays.toString(emps[1]));
+        System.out.println(Arrays.toString(emps[2]));
+        System.out.println(emps[0][1]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         //调用方法
         int num1 = 10;
@@ -549,6 +770,33 @@ public class TestFundation {
     //在要求高性能的情况下尽量避免使用递归，递归调用既花时间又耗内存。
 
 
-
-
 }
+
+class Man implements Comparable {
+    int age;
+    int id;
+    String name;
+
+    public Man(int age, String name) {
+        super();
+        this.age = age;
+        this.name = name;
+    }
+
+    public String toString() {
+        return this.name;
+    }
+
+    public int compareTo(Object o) {//按照年龄从小到大排序
+        Man man = (Man) o;
+        if (this.age < man.age) {
+            return -1;
+        }
+        if (this.age > man.age) {
+            return 1;
+        }
+        return 0;
+    }
+}
+
+

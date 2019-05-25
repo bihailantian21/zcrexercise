@@ -8,24 +8,11 @@ import java.util.Arrays;
  */
 public class TestAlgorithms {
     public static void main(String args[]) {
-        int[] values = { 3, 1, 6, 2, 9, 0, 7, 4, 5, 8 };
-        BubbleSort.bubbleSort1(values);
-        System.out.println(Arrays.toString(values));
-
-        int[] values2 = { 3, 1, 6, 2, 9, 0, 7, 4, 5, 8 };
-        BubbleSort.bubbleSort2(values2);
-        System.out.println(Arrays.toString(values2));
-
-        int[] values3 = { 3, 1, 6, 2, 9, 0, 7, 4, 5, 8 };
+        /*int[] values3 = { 3, 1, 6, 2, 9, 0, 7, 4, 5, 8 };
         BubbleSort.bubbleSort3(values3);
         System.out.println(Arrays.toString(values3));
-
         int searchWord = 2;
         Arrays.sort(values3);
-        System.out.println(BinarySearch.binarySearch(values3,searchWord));
-
-
-        System.out.println("我在mac上进行了代码的调试");
-
+        System.out.println(BinarySearch.binarySearch(values3,searchWord));*/
     }
 }
