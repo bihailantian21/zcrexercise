@@ -70,7 +70,7 @@ public class TestClass {
         Car car3 = new ElectricCar(2333);
         System.out.println(((ElectricCar) car3).getBattery_size());
         car3.propertity();
-        if (car3 instanceof Car) {
+        if (car3 instanceof Car) {//instanceof是二元运算符，左边是对象，右边是类；当对象是右面类或子类所创建对象时，返回true；否则，返回false。
             System.out.println("我是汽车");
 
         }
@@ -92,10 +92,45 @@ public class TestClass {
         }
 
 
+        //==和equals方法
+        /*“==”代表比较双方是否相同。
+        如果是基本类型则表示值相等，如果是引用类型则表示地址相等即是同一个对象。
+
+        Object类中定义有：public boolean equals(Object obj)方法，提供定义“对象内容相等”的逻辑。
+        比如，我们在公安系统中认为id相同的人就是同一个人、学籍系统中认为学号相同的人就是同一个人。
+        Object 的 equals 方法默认就是比较两个对象的hashcode，是同一个对象的引用时返回 true 否则返回 false。
+        但是，我们可以根据我们自己的要求重写equals方法。*/
         Car car11 = new Car();
         Car car22 = new Car();
-        System.out.println(car11==car22);
-        System.out.println(car11.equals(car22));
+        System.out.println(car11==car22);//false地址
+        System.out.println(car11.equals(car22));//true内容
+        Student p1 = new Student(123,"www");
+        Student p2 = new Student(123,"www");
+        System.out.println(p1 == p2);//false地址
+        System.out.println(p1.equals(p2));//true内容
+
+        /*String equals源码
+        public boolean equals(Object anObject) {
+            if (this == anObject) {
+                return true;
+            }
+            if (anObject instanceof String) {
+                String anotherString = (String)anObject;
+                int n = value.length;
+                if (n == anotherString.value.length) {
+                    char v1[] = value;
+                    char v2[] = anotherString.value;
+                    int i = 0;
+                    while (n-- != 0) {
+                        if (v1[i] != v2[i])
+                            return false;
+                        i++;
+                    }
+                    return true;
+                }
+            }
+            return false;
+        }*/
 
     }
 }
