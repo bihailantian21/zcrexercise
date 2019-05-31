@@ -1,4 +1,4 @@
-package com.zcr.exercisetest;
+package com.zcr.exercisetest.collections;
 
 public class SxtHashMap<K,V> {
     public static void main(String[] args) {

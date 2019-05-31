@@ -1,4 +1,4 @@
-package com.zcr.exercisetest;
+package com.zcr.exercisetest.collections;
 
 import java.util.Map;
 import java.util.TreeMap;

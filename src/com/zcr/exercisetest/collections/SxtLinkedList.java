@@ -1,4 +1,4 @@
-package com.zcr.exercisetest;
+package com.zcr.exercisetest.collections;
 
 
 
