@@ -32,3 +32,5 @@ web.xml Entity.java Mapping.java WebContext.java WebApp.java WebHandler.java 整
 Package Explorer目录
 （9）处理错误和首页Server09.java （7）的所有文件 Dispatcher.java error.html index.html经典404及首页处理
 还要获取参数进行判断，从而响应不同的内容
+
+大家
