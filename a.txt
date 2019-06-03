@@ -1,0 +1,43 @@
+abc你想成为怎样的人呢？。
+编码：字符串到字节数组getBytes() 解码：字节数组到字符串new String()
+1.FileInputStream FileOutputStream通过字节或字节数组的方式读取文件\通过字符串或字节数组的方式写数据到文件中\复制
+2.FileReader/FileWriter 通过字符/字符数组的方式读取文件\通过字符数组或字符串的方式写出或追加数据到文件中\复制
+3.BufferedInputStream/BufferedOutputStream 读\写\复制
+4.BufferedReader/BufferedWriter 逐行读取\逐行写入\复制
+5.ByteArrayInputStream/ByteArrayOutputStream
+6.DataInputStream/DataOutputStream
+7.ObjectInputStream/ObjectOutputStream
+8.PrintStream
+9.InputStreamReader/OutputStreamWriter 将字节流转化成字符流
+10.抽象组件、具体组件、抽象装饰类、具体装饰类
+        InputStream          这是我们的抽象组件
+        -FileInputStream
+        -StringBufferInputStream
+        -ByteArrayInputStream    这三类是可以被装饰者包起来的具体组件。
+        -FilterInputStream       这是一个抽象装饰者
+        --PushbackInputStream
+        --BufferedInputStream
+        --DataInputStream
+        --LineNumberInputStream    这四个是我们的具体装饰者
+InputStream                     OutputStream
+            -FileInputStream*                -FileOutputStream*
+            -FilterInputStream              -FilterOutputStream
+                --BufferedInputStream*           --BufferedOutputStream*
+                --DataInputStream*               --DataOutputStream*
+                --LineNumberInputSream           --PrintStream*
+                --PushbackInputStream
+            -PipedInputStream               -PipedOutputStream
+            -SequenceInputStream            -ByteArrayOutputStream*
+            -ByteArrayInputStream*          -ObjectOutputStream*
+            -StringBufferInputStream
+            -ObjectInputStream*
+Reader                          Writer
+            -InputStreamReader*              -OutputStreamWriter*
+                --FileReader*                    --FileWriter*
+            -BufferedReader*                 -BufferedWriter*
+                --LineNumberReader
+            -FilterReader                   -FilterWriter
+                --PushbackReader
+            -CharArrayReader                -CharArrayWriter
+            -PipedReader                    -PipedWriter
+            -StringReader                   -StringWriter
