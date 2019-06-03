@@ -11,6 +11,7 @@
     <title>$Title$</title>
   </head>
   <body>
+  欢迎使用shsxt服务器简易版
   $END$
   </body>
 </html>

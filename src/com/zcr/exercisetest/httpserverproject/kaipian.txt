@@ -1,0 +1,86 @@
+1、面向对象编程OOP
+2、容器
+3、IO
+4、多线程
+5、网络编程
+
+6、XML解析
+7、反射
+8、HTML
+9、HTTP协议
+
+简介：
+上网浏览网页，离不开服务器；客户请求页面，服务器相应内容，相应的内容是根据每个web请求来产生动态内容的，
+其内部即启动多个线程来产生不同的内容。这种请求响应式的交互，都是基于HTTP协议的。
+
+当然随着业务越来越多样化，web服务器变得更复杂了，拥有了像缓存、安全和session管理这些附加功能。
+
+web请求都是使用request和response式的交流。
+
+
+简单易学的HTML
+HTML:Hyper TextMarkup Language超文本标记语言，简单理解为浏览器使用的语言。
+固定结构：
+<html>--开始标签
+<head>--网页上的控制信息
+<title>--页面标题
+</title>
+<body>--页面显示的内容
+<body>
+</html>--结束标签
+
+
+表单的使用
+post: 提交,基于http协议不同      量大  请求参数url不可见 安全
+get:  默认,获取,基于http协议不同  量小  请求参数url可见 不安全
+action: 请求web服务器的资源   URL
+name:作为后端使用，区分唯一: 请求服务器，必须存在，数据不能提交
+id: 作为前端使用，区分唯一
+
+不得不提的http协议
+HTTP协议：超文本传输协议（HTTP,HyperText Transfer Protocol）是互联网上应用最为广泛的一种网络协议，
+所有的WWW文件都必须遵守这个标准
+请求协议：
+1.请求行：方法（GET/POST）、URI、协议/版本
+2.请求头：Request Header
+3.请求正文：
+例：
+GET /index.html?name=test&pwd=123456 HTTP/1.1
+Accept:text/html,applications/xhtml+xml,*/*
+Accept-language:zh-CN
+User-Agent:Mozilla/5.0(compatible;MSIE 9.0;Windows NT 6.1;Trident/5.0)
+Accept-Encoding:gzip,deflate
+Host:localhost
+Connection:Keep-Alive
+
+POST /index.html HTTP/1.1
+Accept:text/html,applications/xhtml+xml,*/*
+Accept-language:zh-CN
+User-Agent:Mozilla/5.0(compatible;MSIE 9.0;Windows NT 6.1;Trident/5.0)
+Accept-Encoding:gzip,deflate
+Host:localhost
+Connection:Keep-Alive
+name=test&pwd=123456
+响应协议：
+1.状态行：协议/版本、状态码、状态描述
+2.响应头：Response Header
+3.
+例：
+HTTP/1.0 200 OK
+Date:Mon,31Dec209904:25:57GMT
+Server:shsxt Server/0.0.1;charset=GBK
+Content-type:text/html
+Content-length:39725426
+
+状态码  说明
+1XX 指示信息--表示请求已接收，继续处理
+2XX 成功--表示请求已经被成功接收、理解、接受
+3XX 重定向--要完成请求必须进行更进一步的操作
+4XX 客户端的错误--请求有语法错误或请求无法实现。
+5XX 服务器端错误--服务器未能实现合法的请求
+
+应用层协议
+协议就是一种交流格式
+
+
+
