@@ -1,5 +1,6 @@
 package com.zcr.exercisetest.quartz;
 
+/*
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
@@ -16,4 +17,4 @@ public class HelloJob2 implements Job {
         //具体的业务逻辑
         System.out.println("开始生成任务报表 或 开始发送邮件");
     }
-}
+}*/

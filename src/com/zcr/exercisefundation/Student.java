@@ -1,19 +1,26 @@
 package com.zcr.exercisefundation;
 
+import com.zcr.exercisetest.TestAnnotation;
+
 import java.util.Objects;
 
 /**
  * @author zcr
  * @date 2019/5/6-20:35
  */
+@TestAnnotation.ZTable("tb_student")
 public class Student implements Comparable<Student>{
     //对于一个类来说，一般有三种常见的成员：属性field、方法method、构造器constructor。这三种成员都可以定义零个或多个。
     //属性
     /*属性用于定义该类或该类对象包含的数据或者说静态特征。属性作用范围是整个类体。
     在定义成员变量时可以对其初始化，如果不对其初始化，Java使用默认的值对其初始化。
     [修饰符] 属性类型 属性名 = [默认值] ;*/
+
+    @TestAnnotation.ZField(columnName = "id",type = "int",length = 10)
     private int id;
+    @TestAnnotation.ZField(columnName = "sname",type = "varchar",length = 10)
     private String name;
+    @TestAnnotation.ZField(columnName = "age",type = "int",length = 3)
     private int age;
 
     //静态成员变量（类变量）

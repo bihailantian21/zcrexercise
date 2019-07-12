@@ -1,11 +1,14 @@
 package com.zcr.exercisetest.quartz;
 
+/*
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 
 import java.util.Date;
+*/
 
+/*
 public class HelloJob1 implements Job {
 
     public HelloJob1() {
@@ -18,5 +21,5 @@ public class HelloJob1 implements Job {
         System.out.println("Hello World! - " + new Date());
         System.out.println("-------end---------");
     }
-
 }
+*/
